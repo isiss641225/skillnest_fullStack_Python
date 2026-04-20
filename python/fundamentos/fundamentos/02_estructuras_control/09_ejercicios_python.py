@@ -93,38 +93,78 @@ def tablaMultiplicar():
 Crea un programa que pida números continuamente y los sume. El ciclo debe terminar cuando el usuario ingrese un número negativo. 
 Al final, muestra la suma total (sin incluir el negativo). """
 
+def sumaCentinela():
+    suma_total = 0
+    
 
 
 """ 7. Contador de Vocales
 Pide al usuario una frase o palabra. Utiliza un bucle para recorrer la 
 cadena y contar cuántas vocales tiene en total. """
 
+def contadorVocales():
+    texto = input("Ingresa una palabra o frase: ").lower()
+    vocales = 0
+    for i in range(len(texto)):
+        #Repetir la condición con cada vocal
+        if texto[i] == "a" or texto[i] == "e" or texto[i] == "i" or texto[i] == "o" or texto[i] == "u":
+            vocales += 1
+            #Mismo de arriba pero con las vocales con tilde
+        elif texto[i] == "á" or texto[i] == "é" or texto[i] == "í" or texto[i] == "ó" or texto[i] == "ú":
+            vocales += 1
+    print(f"La cadena '{texto}' tiene {vocales} en total")
+
 """ 8. Validación de Contraseña
 Define una contraseña en una variable. Pide al usuario que la intente adivinar. 
 Tienes un máximo de 3 intentos; si falla los 3, bloquea el acceso. """
+
+
 
 """ III. Manejo de Arreglos / Listas (Avanzado)
 9. Registro de Nombres
 Crea un arreglo vacío. Pide al usuario que ingrese 5 nombres. 
 Guárdalos en el arreglo y, al final, imprímelos en orden inverso al que fueron ingresados. """
 
+
+
 """ 10. Promedio de Notas
 Solicita al usuario cuántas notas desea ingresar. Almacena cada nota en un arreglo. 
 Al finalizar, calcula y muestra el promedio, la nota más alta y la más baja. """
+
+def promedioNotas():
+    cantidad = int(input("¿Cuántas notas deseas ingresar?"))
+    notas = []
+    for i in range(cantidad):
+        nota = float(input(f"Nota {i+1}: "))
+        notas.append(nota)
+    
+    promedio = sum(notas) / len(notas)
+    print(f"Promedio: {promedio}")
+    print(f"Nota más alta: {max(notas)}")
+    print(f"Nota más baja: {min(notas)}")
 
 """ 11. Filtro de Arreglos
 Dado un arreglo de números generado por el usuario, crea un nuevo arreglo que contenga 
 solo los números que sean mayores a 50. Muestra ambos arreglos. """
 
+#def filtroArreglos():
+    
+
 """ 12. Buscador de Elementos
 Crea una lista de 10 ciudades. Pide al usuario que ingrese el nombre de una ciudad y el 
 programa debe decir si la ciudad se encuentra en la lista y en qué índice (posición) está. """
+
+def buscadorElemento():
+    ciudades = ["Nairobi", "Tokio", "Santiago", "Lima", "Caracas", "Río", "Berlín", "Seúl", "Buenos Aires",]
+    ciudad = input("Ingresar ciudad (con mayúscula al principio): ").capitalize()
+    esta = ciudades.index(ciudad)
+    if esta < int(ciudades) 
 
 """ IV. Retos de Lógica Combinada
 13. Simulación de Inventario
 Crea dos arreglos: uno para nombres_productos y otro para precios. Permite al usuario ingresar 3 productos 
 con sus precios. Luego, muestra una lista formateada: Producto: [Nombre] - Precio: $[Valor]. """
-
+def 
 """ 14. Generador de Lista de Compras
 Usa un bucle while para que el usuario agregue artículos a una lista de compras. El proceso termina cuando 
 el usuario escribe "terminar". Al final, muestra la lista ordenada alfabéticamente. """
@@ -156,16 +196,25 @@ while continuar:
     opcion = input("\n---Elije una opción: (1-15) (0 para salir)")
     if opcion == "1":
         print("\nEjecutar ejercicio 1: ")
-        print(numerosDecimales())
+        numerosDinamicos()
     elif opcion == "2":
         print("\nEjecutar ejercicio 2: ")
-        print(verificarEdad())
+        verificarEdad()
     elif opcion == "3":
         print("\nEjecutar ejercicio 3: ")
-        print(descuento())
+        descuento()
     elif opcion == "4":
         print("\nEjecutar ejercicio 4: ")
-        print(clasificadorNum())
+        clasificadorNum()
+    elif opcion == "5":
+        print("\nEjecutar ejercicio 5: ")
+        tablaMultiplicar()
+    elif opcion == "6":
+        print("\nEjecutar ejercicio 6: ")
+        sumaCentinela()
+    elif opcion == "7":
+        print("\nEjecutar ejercicio 7: ")
+        contadorVocales()
     elif opcion == "0":
         print("Saliendo...")
         continuar = False
