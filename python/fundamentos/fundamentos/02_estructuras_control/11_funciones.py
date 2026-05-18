@@ -1,5 +1,5 @@
 #Funciones en python
-def multiplicacion(num1, num2): #definimos la función multiplación con los parámetros num1 y num2
+def multiplicacion(num1, num2): #definimos la función multiplicación con los parámetros num1 y num2
    resultado = num1 * num2     #instrucciones dentro de la función
    return resultado            #regresamos valor de resultado
 
