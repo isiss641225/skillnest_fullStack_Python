@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranking de Jugadores</title>
+
+    <style>
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background-color:{% if color %}{{color}}{% else %}#f4f4f4{% endif %};
+            text-align:center;
+        }
+
+        h1{
+            color:#333;
+        }
+
+        .ranking{
+            width:450px;
+            margin:auto;
+            background:white;
+            border-radius:10px;
+            padding:20px;
+            box-shadow:0 0 10px rgba(0,0,0,.2);
+        }
+
+        ul{
+            list-style:none;
+            padding:0;
+        }
+
+        li{
+            padding:10px;
+            border-bottom:1px solid #ddd;
+            font-size:18px;
+        }
+
+        .top{
+            color:gold;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>🏆 Ranking de Jugadores 🎮</h1>
+
+<div class="ranking">
+
+<ul>
+
+{% for jugador in jugadores %}
+
+<li {% if loop.index == 1 %}class="top"{% endif %}>
+
+{{loop.index}}. {{jugador.nombre}} - {{jugador.puntaje}} puntos
+
+</li>
+
+{% endfor %}
+
+</ul>
+
+<p>Total de jugadores: {{ jugadores|length }}</p>
+
+</div>
+
+</body>
+</html>
