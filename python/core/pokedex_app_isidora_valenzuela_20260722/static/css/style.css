@@ -1,0 +1,69 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* Contenedor principal para organizar las tarjetas en cuadrícula */
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Diseño de cada tarjeta */
+.tarjeta {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    width: 220px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Efecto al pasar el mouse por encima de la tarjeta */
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Título de la tarjeta (#ID - Nombre) */
+.tarjeta h3 {
+    margin: 10px 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+/* Imagen dentro de la tarjeta */
+.tarjeta img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin: 10px 0;
+}
+
+/* Textos e información de los atributos */
+.tarjeta p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.tarjeta strong {
+    color: #333;
+}
