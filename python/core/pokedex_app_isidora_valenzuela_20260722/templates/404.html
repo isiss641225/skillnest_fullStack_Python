@@ -2,14 +2,28 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Pokémon no encontrado</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon no disponible</title>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <div class="error-container">
-        <h1>¡Ups! 404</h1>
-        <p>{{ mensaje }}</p>
-        <a href="/pokemon">Volver a la Pokédex</a>
+
+    <div class="error-wrapper">
+        <div class="error-card">
+            <h1 class="title-primary">¡Error!</h1>
+            <p class="error-message">{{ mensaje }}</p>
+            
+            <h2 class="title-warning">Pokémon no encontrado</h2>
+            
+            <p class="subtitle-text">
+                No ha sido posible encontrar al pokémon requerido.
+            </p>
+
+            <a href="/pokemon" class="btn-primary">
+                Volver a Pokédex
+            </a>
+        </div>
     </div>
+
 </body>
 </html>
