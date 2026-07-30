@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataformas Digitales</title>
+    <!-- Vinculación del archivo CSS estático -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Plataformas Digitales</h1>
+        <p class="subtitle">Visualización de datos de las principales plataformas</p>
+
+        {% if plataformas %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Usuarios Activos</th>
+                        <th>Año de Fundación</th>
+                        <th>País de Origen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for plataforma in plataformas %}
+                        <tr>
+                            <td><strong>{{ plataforma.nombre }}</strong></td>
+                            <td>{{ plataforma.usuarios }}</td>
+                            <td>{{ plataforma.fundado }}</td>
+                            <td>{{ plataforma.pais }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <div class="empty-msg">
+                <p>No se encontraron plataformas registradas en este momento.</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
