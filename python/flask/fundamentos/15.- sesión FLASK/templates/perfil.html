@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+    <div class="container">
+        <h2>Perfil de usuario</h2>
+        <hr>
+        
+        <div class="card">
+            <p><strong>Nombre:</strong> {{ session.get("nombre_usuario", "No registrado") }}</p>
+            <p><strong>Email:</strong> {{ session.get("email_usuario", "No registrado") }}</p>
+        </div>
 
-    <h2>Perfil de usuario</h2>
-    
-    <p><strong>Nombre:</strong> {{ session.get("nombre_usuario", "No registrado") }}</p>
-    <p><strong>Email:</strong> {{ session.get("email_usuario", "No registrado") }}</p>
-    <p><strong>Ciudad:</strong> {{ session.get("ciudad_usuario", "No registrada") }}</p>
-    
-    <br>
-    <a href="{{ url_for('index') }}">Volver al Inicio</a>
+        <div class="links">
+            <a href="{{ url_for('index') }}">Volver al Inicio</a>
+        </div>
+    </div>
 </body>
 </html>
