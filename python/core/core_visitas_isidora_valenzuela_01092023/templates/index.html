@@ -12,63 +12,32 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <div class="visitas-card">
-            <div class="icono">
-                <i class="bi bi-eye-fill"></i>
-            </div>
+    <div class="card">
+        <h1>Contador de Visitas</h1>
+        
+        <!-- Muestra visitas enviadas desde app.py -->
+        <p class="counter">Has visitado este sitio <strong>{{ visitas }}</strong> veces.</p>
+        
+        <!-- Muestra cantidad de reinicios -->
+        <p class="reset-count">El contador se ha reiniciado <strong>{{ reinicios }}</strong> veces.</p>
 
-            <h1>Contador de Visitas</h1>
-            <p class="descripcion">Seguimiento de visitas mediante sesiones de Flask.</p>
+        <div class="actions">
+            <!-- Botón para sumar +2 -->
+            <a href="{{ url_for('sumar_dos') }}" class="btn btn-primary">+2 Visitas</a>
 
-            <!-- CONTADOR -->
-            <div class="contador">
-                <span>{{ visitas }}</span>
-            </div>
+            <!-- Botón para reiniciar -->
+            <a href="{{ url_for('reiniciar') }}" class="btn btn-warning">Reiniciar Visitas</a>
 
-            <p class="texto-visitas">
-                {% if visitas == 1 %}
-                    Has visitado esta página 1 vez.
-                {% else %}
-                    Has visitado esta página {{ visitas }} veces.
-                {% endif %}
-            </p>
-
-            <!-- BOTONES -->
-            <div class="acciones">
-                <a href="{{ url_for('sumar_dos') }}" class="btn btn-primary">
-                    <i class="bi bi-plus-circle"></i> Sumar +2
-                </a>
-                <a href="{{ url_for('reiniciar') }}" class="btn btn-warning">
-                    <i class="bi bi-arrow-counterclockwise"></i> Reiniciar
-                </a>
-            </div>
-
-            <!-- FORMULARIO PERSONALIZADO -->
-            <div class="formulario">
-                <h3>Agregar visitas</h3>
-                <form action="{{ url_for('sumar') }}" method="POST">
-                    <div class="input-group">
-                        <input type="number" name="cantidad" min="1" class="form-control" placeholder="Ingresa una cantidad" required>
-                        <button type="submit" class="btn btn-success">
-                            <i class="bi bi-plus-lg"></i> Agregar
-                        </button>
-                    </div>
-                </form>
-            </div>
-
-            <!-- REINICIOS -->
-            <div class="reinicios">
-                <i class="bi bi-arrow-repeat"></i> Contador reiniciado: <strong>{{ reinicios }}</strong> veces.
-            </div>
-
-            <!-- DESTRUIR SESIÓN -->
-            <div class="destruir">
-                <a href="{{ url_for('destruir_sesion') }}" class="btn btn-outline-danger">
-                    <i class="bi bi-trash3-fill"></i> Destruir sesión
-                </a>
-            </div>
+            <!-- Nivel 1: Enlace para destruir la sesión -->
+            <a href="{{ url_for('destruir_sesion') }}" class="btn btn-danger">Destruir Sesión</a>
         </div>
+
+        <!-- Formulario para sumar cantidad personalizada -->
+        <form action="{{ url_for('sumar') }}" method="POST" class="custom-form">
+            <label for="cantidad">Aumentar visitas en:</label>
+            <input type="number" id="cantidad" name="cantidad" min="1" required>
+            <button type="submit" class="btn btn-secondary">Sumar</button>
+        </form>
     </div>
 </body>
 </html>
