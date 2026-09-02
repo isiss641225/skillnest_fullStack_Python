@@ -1,0 +1,125 @@
+/* Paleta Pastel con Alto Contraste y Excelente Legibilidad */
+:root {
+    --bg-page: #F3EEF8;          /* Fondo lavanda muy suave para dar contraste a las tarjetas */
+    --card-main: #FFFFFF;        /* Tarjeta blanca para que todo resalte limpio */
+    
+    /* Banners */
+    --banner-info-bg: #D8F3DC;   /* Verde menta suave */
+    --banner-info-text: #1B4332; /* Verde oscuro (lectura clara) */
+    
+    /* Círculos de Números */
+    --number-bg: #FFD6E0;        /* Rosa pastel */
+    --number-text: #5C2C35;      /* Rosa/Marrón oscuro para legibilidad */
+    --number-hover: #FFB3C6;     /* Rosa más vivo al pasar el mouse */
+    
+    /* Botones vibrantes estilo pastel */
+    --btn-primary-bg: #90E0EF;   /* Azul pastel saturado */
+    --btn-primary-text: #03045E; /* Azul marino profundo */
+    --btn-primary-hover: #48CAE4;
+    
+    --btn-reset-bg: #FFB5A7;     /* Coral pastel */
+    --btn-reset-text: #6B2D26;   /* Marrón rojizo oscuro */
+    --btn-reset-hover: #F8AD9D;
+    
+    /* Tarjeta de Reglas */
+    --rules-bg: #E0AAFF;        /* Púrpura pastel vibrante */
+    --rules-text: #3C096C;      /* Púrpura muy oscuro */
+}
+
+body {
+    background-color: var(--bg-page) !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+}
+
+/* Tarjeta Principal */
+.card-pastel {
+    background-color: var(--card-main) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 25px rgba(106, 76, 147, 0.08) !important;
+}
+
+/* Círculos de Números */
+.numero-circulo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--number-bg);
+    color: var(--number-text);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.numero-circulo:hover {
+    transform: translateY(-2px) scale(1.1);
+    background-color: var(--number-hover);
+    cursor: pointer;
+}
+
+/* Banners y Badges */
+.banner-mensaje {
+    background-color: var(--banner-info-bg) !important;
+    color: var(--banner-info-text) !important;
+}
+
+.badge-intentos {
+    background-color: #E9ECEF !important;
+    color: #495057 !important;
+    border: 1px solid #CED4DA !important;
+}
+
+.banner-footer {
+    background-color: #F8F9FA !important;
+    color: #6C757D !important;
+}
+
+/* Formulario e Input */
+.input-pastel {
+    border-radius: 12px !important;
+    border: 2px solid #C77DFF !important;
+    color: #2B2D42 !important;
+    background-color: #FFFFFF !important;
+}
+
+.input-pastel:focus {
+    border-color: #9D4EDD !important;
+    box-shadow: 0 0 0 0.25rem rgba(157, 78, 221, 0.2) !important;
+}
+
+/* Botones */
+.btn-adivinar {
+    background-color: var(--btn-primary-bg) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    color: var(--btn-primary-text) !important;
+    transition: all 0.15s ease;
+}
+
+.btn-adivinar:hover {
+    background-color: var(--btn-primary-hover) !important;
+    transform: translateY(-2px);
+}
+
+.btn-reiniciar {
+    background-color: var(--btn-reset-bg) !important;
+    border: none !important;
+    border-radius: 12px !important;
+    color: var(--btn-reset-text) !important;
+    transition: all 0.15s ease;
+}
+
+.btn-reiniciar:hover {
+    background-color: var(--btn-reset-hover) !important;
+    transform: translateY(-2px);
+}
+
+/* Tarjeta de Reglas */
+.card-reglas {
+    background-color: var(--rules-bg) !important;
+    border-radius: 16px !important;
+    color: var(--rules-text) !important;
+}
